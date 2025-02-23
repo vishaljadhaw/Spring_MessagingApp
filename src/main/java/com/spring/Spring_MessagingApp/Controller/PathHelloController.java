@@ -1,16 +1,16 @@
 package com.spring.Spring_MessagingApp.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/hello")
-public class QueryParamHello {
+public class PathHelloController {
 
-    @GetMapping("/query")
-    public String sayHelloQuery(@RequestParam("name") String name) {
+    @GetMapping("/param/{name}")
+    public String sayHelloPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 }
